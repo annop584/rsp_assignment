@@ -67,6 +67,30 @@ export class RspService {
     };
   }
 
+  async reset_rsp_stat(email) {
+    const user = await this.userRepository.resetscoreUser(email);
+    const highscore = await this.highscoreRepository.getHighscore();
+    let resp_highscore = highscore.highscore;
+    let isnewhigh = false;
+    if (user.score > highscore.highscore) {
+      const newhighscore = await this.highscoreRepository.updateHighscore(
+        user.score,
+      );
+      resp_highscore = newhighscore.highscore;
+      isnewhigh = true;
+    }
+
+    return {
+      success: true,
+      data: {
+        yourscore: user.score,
+        highscore: resp_highscore,
+        isnewhigh: isnewhigh,
+      },
+      message: 'success',
+    };
+  }
+
   async getScores(email) {
     //get userscore
     const user = await this.userRepository.getUser(email);

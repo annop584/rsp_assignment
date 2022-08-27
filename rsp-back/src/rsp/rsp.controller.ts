@@ -49,6 +49,17 @@ export class RspController {
     // return jwtdecode['email'];
   }
 
+  @Get('resetscore')
+  @UseGuards(AuthGuard('jwt'))
+  @UsePipes(ValidationPipe)
+  async resetrsp(@Req() req: Request) {
+    const jwt = req.headers.authorization.replace('Bearer ', '');
+    const jwtdecode = this.jwtService.decode(jwt, { json: true });
+
+    return this.rspService.reset_rsp_stat(jwtdecode['email']);
+    // return jwtdecode['email'];
+  }
+
   @Get('gethighscore')
   @UseGuards(AuthGuard('jwt'))
   @UsePipes(ValidationPipe)

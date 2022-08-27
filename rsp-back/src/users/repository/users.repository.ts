@@ -26,6 +26,13 @@ export class UserRepository extends Repository<User> {
     return user;
   }
 
+  async resetscoreUser(email: string) {
+    const user = await this.findOne({ email: email });
+    user.score = 0;
+    await user.save();
+    return user;
+  }
+
   async isAlreadyhasEmail(email: string) {
     const found = await this.findOne({ email: email });
     if (!found) {
