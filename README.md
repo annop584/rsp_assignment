@@ -12,6 +12,10 @@
 - docker, docker-compose
 - clone this repository
 
+```sh
+git clone git@github.com:annop584/rsp_assignment.git
+```
+
 ## _Run Application in Production mode_
 
 start applications.
@@ -23,7 +27,7 @@ docker-compose -f docker-compose.production.yaml  up -d
 
 wait a moment, then go to browser and enter url http://localhost:3050 for open web application
 
-stop applications.
+for stop applications.
 
 ```sh
 cd rsp_assignment
