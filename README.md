@@ -4,7 +4,7 @@
 
 # Deploy on localhost
 
-![alt text](https://github.com/annop584/rsp_assignment/blob/main/containers.png?raw=true)
+![alt text](https://github.com/annop584/rsp_assignment/blob/main/assets/containers.png?raw=true)
 
 ## _Prerequisite_
 
