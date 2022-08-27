@@ -22,7 +22,7 @@ start applications.
 
 ```sh
 cd rsp_assignment
-docker-compose -f docker-compose.yaml -f docker-compose.development.yaml up -d
+docker-compose -f docker-compose.yaml -f docker-compose.production.yaml up -d
 ```
 
 wait a moment, then go to browser and enter url http://localhost:3050 for open web application
@@ -31,7 +31,7 @@ for stop applications.
 
 ```sh
 cd rsp_assignment
-docker-compose -f docker-compose.yaml -f docker-compose.development.yaml  down --rmi all
+docker-compose -f docker-compose.yaml -f docker-compose.production.yaml  down --rmi all
 ```
 
 ## _Run Application in Development mode_
