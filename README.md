@@ -2,7 +2,7 @@
 
 ---
 
-## _Deploy on localhost_
+# Deploy on localhost
 
 ![alt text](https://github.com/annop584/rsp_assignment/blob/main/containers.png?raw=true)
 
@@ -95,7 +95,7 @@ NEXT_PUBLIC_ENDPOINT=http://yourendpoint:3050
 
 ---
 
-## _Deploy on Ubuntu Server_
+# Deploy on Ubuntu Server
 
 install docker
 
