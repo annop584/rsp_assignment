@@ -10,8 +10,10 @@ import useGetScores from "@/src/hooks/useGetScores";
 import useGetbotrsp from "@/src/hooks/useGetbotrsp";
 import { rspResult } from "@/src/utils/rsputils";
 import useSendWin from "@/src/hooks/useSendWin";
+import useSendLose from "@/src/hooks/useSendLose";
 import { getEmail } from "@/src/utils/jwtutil";
 import { io } from "socket.io-client";
+
 const socket = io(process.env.NEXT_PUBLIC_ENDPOINT as string);
 
 type Props = {};
@@ -28,6 +30,7 @@ export default function Gameplay({}: Props) {
   const { isSignin } = useChecksignin();
   const { signOut } = useSignout();
   const { sendWin } = useSendWin();
+  const { sendLose } = useSendLose();
 
   //socket
   const sendHighscore2socket = (highScore: number) => {
@@ -60,6 +63,14 @@ export default function Gameplay({}: Props) {
       setTimeout(async () => {
         if (result === "win") {
           const respdata = await sendWin();
+          if (respdata.success && respdata.data) {
+            setNewScore(respdata.data.yourscore, respdata.data.highscore);
+            if (respdata.data.isnewhigh) {
+              sendHighscore2socket(respdata.data.highscore);
+            }
+          }
+        } else if (result === "lose") {
+          const respdata = await sendLose();
           if (respdata.success && respdata.data) {
             setNewScore(respdata.data.yourscore, respdata.data.highscore);
             if (respdata.data.isnewhigh) {
