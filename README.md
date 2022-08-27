@@ -1,6 +1,6 @@
 # Rock Scrissors Paper Assignment
 
----
+## ![alt text](https://github.com/annop584/rsp_assignment/blob/main/assets/demo.gif)
 
 # Deploy on localhost
 
