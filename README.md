@@ -2,6 +2,8 @@
 
 ## ![alt text](https://github.com/annop584/rsp_assignment/blob/main/assets/demo.gif)
 
+## ![alt text](https://github.com/annop584/rsp_assignment/blob/main/assets/demo2.gif)
+
 # Deploy on localhost
 
 ![alt text](https://github.com/annop584/rsp_assignment/blob/main/assets/containers.png?raw=true)
