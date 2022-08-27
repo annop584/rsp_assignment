@@ -25,9 +25,9 @@ cd rsp_assignment
 docker-compose -f docker-compose.yaml -f docker-compose.production.yaml up -d
 ```
 
-wait a moment, then go to browser and enter url http://localhost:3050 for open web application
+wait a moment, then go to browser and enter url http://localhost:3050 for open web application.
 
-for stop applications.
+for stop applications
 
 ```sh
 cd rsp_assignment
