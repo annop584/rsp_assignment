@@ -1,0 +1,81 @@
+$title-size: 3rem;
+$login-button-width: 10rem;
+$login-button-height: 3rem;
+$login-button-fontsize: 1.4rem;
+$login-button-text-margin-left: 0rem;
+
+$form-fontsize: 1.2rem;
+$form-marginbottom: 2rem;
+$form-label-marginbottom: 1.2rem;
+$form-label-input-margintop: 0.6rem;
+$form-label-input-width: 100%;
+$form-label-input-height: 2rem;
+
+$register-button-color: rgb(144, 144, 144);
+$error-text-color: rgb(255, 96, 96);
+$error-text-fontsize: 0.8rem;
+
+
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: $form-fontsize;
+        margin-bottom: $form-marginbottom;
+
+      
+
+        label{
+            margin-bottom: $form-label-marginbottom;
+         
+
+            .errortext{
+                text-align: right;
+                color:$error-text-color;
+                font-size: $error-text-fontsize;
+            }
+
+            input{
+                margin-top: $form-label-input-margintop;
+                width: $form-label-input-width;
+                height: $form-label-input-height;
+            }
+        }
+
+        a{
+            text-align: right;
+            font-size: 1rem;
+            color: $register-button-color;
+        }
+    }
+
+    h1{
+        font-size: $title-size;
+    }
+
+    p{
+        text-align: center;
+
+        button{
+            width: $login-button-width;
+            height: $login-button-height;
+
+            font-size: $login-button-fontsize;
+
+            span{
+                margin-left: $login-button-text-margin-left;
+            }
+        }
+    } 
+}

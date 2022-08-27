@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+  postgres: 
+    build: ./rsp_db/
+  api:
+    depends_on:
+      - postgres
+    ports:
+      - "4004:4000"
+    build: ./rsp-back/
+  front:
+    depends_on:
+      - api
+    ports:
+      - "3004:3000"
+    build: ./rsp_front/ 
+  nginx:
+    depends_on:
+      - api
+      - front
+    restart: always
+    build: ./rsp_nginx/
+    ports:
+      - "3050:80"
+  

@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  postgres:
+    container_name: rsp-postgres-docker-development
+    environment:
+      POSTGRES_USER: "annop584"
+      POSTGRES_PASSWORD: "annop584@DevServer"
+      PGDATA: "/data/postgres"
+      TZ: 'Asia/Bangkok'
+    stdin_open: true
+    tty: true
+  
+    ports:
+      - '15433:5432'
+    restart: always
+  
+  api:
+    command: npm run start:dev
+    container_name: rsp-back-docker-development
+    volumes:
+      - ./rsp-back:/app
+  
+  front:
+    command: npm run dev
+    container_name: rsp-front-docker-development
+    volumes:
+      - ./rsp_front:/app

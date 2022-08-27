@@ -1,0 +1,85 @@
+/* variables.module.scss */
+@import "mixins";
+
+//default var
+$container-size: 2rem;
+$header-margin: 2rem;
+$margin-bot-rsp_layout-value: 7rem;
+$robot-size: 8rem;
+$robot-magin-top: 1rem;
+$robot-magin-bottom: 0.5rem;
+$score-margin-right: 3rem;
+$score-margin-left: 6rem;
+
+//mobile var
+$mobile_score_fontsize: 1.1rem;
+$mobile_margin-bot-rsp_layout-value: 3.5rem;
+
+
+.container{
+  padding: $container-size $container-size 0 $container-size;
+}
+
+.horizontal_layout{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.vertical_layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+//
+.header_layout{
+  @extend .horizontal_layout;
+  justify-content: space-between;
+
+  margin-bottom: $header-margin;
+}
+
+
+
+.rps_selection_horizon_layout{
+  @extend .horizontal_layout;
+  @include mobile {
+    justify-content: space-between;
+  }
+  @include desktop {
+   justify-content: center
+  
+}
+}
+
+.rps_selection_vertical_layout{
+  @extend .vertical_layout;
+  margin-bottom: $margin-bot-rsp_layout-value;
+  @include mobile {
+      margin-bottom: $mobile_margin-bot-rsp_layout-value;
+  }
+
+  h1{
+    font-size: $robot-size;
+    margin: $robot-magin-top 0 $robot-magin-bottom 0;
+  }
+}
+
+.show_score_layout{
+  @extend .vertical_layout;
+
+  span{
+    margin: 0 $score-margin-right 0 $score-margin-left;
+  }
+
+  @include mobile {
+    h2{
+      font-size: $mobile_score_fontsize;
+    }
+  }
+}
+

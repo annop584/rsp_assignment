@@ -1,0 +1,24 @@
+@import "mixins";   
+
+$box-square-size: 5rem;
+$box-button-size: 100%;
+$box-margin-horizon-value: 10rem;
+$emoji-size: 3.5rem;
+
+.boxsize{
+    width: $box-square-size;
+    height: $box-square-size;
+}
+
+.boxsize_center{
+    @extend .boxsize;
+    @include desktop {
+        margin: 0 $box-margin-horizon-value 0 $box-margin-horizon-value;
+    }
+}
+
+.boxsize button{
+    width: $box-button-size;
+    height: $box-button-size;
+    font-size: $emoji-size;
+}

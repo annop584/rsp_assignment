@@ -1,0 +1,76 @@
+
+rsp_db/postgres
+
+.DS_Store
+
+# compiled output
+rsp-back/dist
+rsp-back/node_modules
+
+# Logs
+rsp-back/logs
+rsp-back/*.log
+rsp-back/npm-debug.log*
+rsp-back/pnpm-debug.log*
+rsp-back/yarn-debug.log*
+rsp-back/yarn-error.log*
+rsp-back/lerna-debug.log*
+
+# OS
+rsp-back/.DS_Store
+
+# Tests
+rsp-back/coverage
+rsp-back/.nyc_output
+
+# IDEs and editors
+rsp-back/.idea
+rsp-back/.project
+rsp-back/.classpath
+rsp-back/.c9/
+rsp-back/*.launch
+rsp-back/.settings/
+rsp-back/*.sublime-workspace
+
+# IDE - VSCode
+rsp-back/.vscode/*
+rsp-back/!.vscode/settings.json
+rsp-back/!.vscode/tasks.json
+rsp-back/!.vscode/launch.json
+rsp-back/!.vscode/extensions.json
+
+
+
+rsp_front/node_modules
+rsp_front/.pnp
+rsp_front.pnp.js
+
+# testing
+rsp_front/coverage
+
+# next.js
+rsp_front/.next/
+rsp_front/out/
+
+# production
+rsp_front/build
+
+# misc
+rsp_front.DS_Store
+rsp_front*.pem
+
+# debug
+rsp_frontnpm-debug.log*
+rsp_frontyarn-debug.log*
+rsp_frontyarn-error.log*
+rsp_front.pnpm-debug.log*
+
+# local env files
+rsp_front.env*.local
+
+# vercel
+rsp_front.vercel
+
+# typescript
+rsp_front*.tsbuildinfo
+rsp_frontnext-env.d.ts
