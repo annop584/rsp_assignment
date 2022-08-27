@@ -8,9 +8,9 @@
 
 ## _Prerequisite_
 
--- nodejs
--- docker, docker-compose
--- clone this repository
+- nodejs
+- docker, docker-compose
+- clone this repository
 
 ## _Run Application in Production mode_
 
@@ -21,7 +21,7 @@ cd rsp_assignment
 docker-compose -f docker-compose.production.yaml  up -d
 ```
 
-wait a moment, then go to browser and enter url http://localhost:3050/ for open web application
+wait a moment, then go to browser and enter url http://localhost:3050 for open web application
 
 stop applications.
 
@@ -53,7 +53,7 @@ cd rsp_assignment
 docker-compose.yaml -f docker-compose.development.yaml  up -d
 ```
 
-wait a moment, then go to browser and enter url http://localhost:3050/ for open web application
+wait a moment, then go to browser and enter url http://localhost:3050 for open web application
 
 stop application in development mode
 
@@ -190,5 +190,7 @@ restart nginx
 ```sh
 sudo systemctl restart nginx
 ```
+
+don't forget to change api endpoint at frontend path "rsp_assignment/rsp_front/.env.production"
 
 then try to test on browser by access url "http://your-ubuntu-server-ip"
