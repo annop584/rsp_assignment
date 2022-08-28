@@ -24,7 +24,7 @@ export default function RSPsymbol({ type, isDisabled, selectRspFunc }: Props) {
         setsymbol("🖐🏼");
         break;
       case RSP_TYPE.RIDDLE:
-        setsymbol("❔");
+        setsymbol("?");
         break;
       default:
         break;
