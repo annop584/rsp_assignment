@@ -42,7 +42,7 @@ $mobile_margin-bot-rsp_layout-value: 3.5rem;
 
   margin-bottom: $header-margin;
   @include mobile {
-  h4{
+  h3{
     white-space: nowrap; 
     width: 10rem; 
     overflow: hidden;
