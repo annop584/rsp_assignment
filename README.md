@@ -89,6 +89,7 @@ after cypress application appear select "cypress/e2e/spec.cy.ts" for run e2e tes
 ## _Change api endpoint at fronend_
 
 if you want to test on mobile you need to change from 'localhost' to your computer ipaddress
+
 open file at "rsp_assignment/rsp_front/.env.production" or "rsp_assignment/rsp_front/.env.development"
 and change env variable "NEXT_PUBLIC_ENDPOINT" to your desired endpoint
 
