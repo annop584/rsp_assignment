@@ -99,6 +99,12 @@ NEXT_PUBLIC_ENDPOINT=http://yourendpoint:3050
 
 # Deploy on Ubuntu Server
 
+access to server
+
+```sh
+  ssh root@your-ubuntu-server-ip
+```
+
 install docker
 
 ```sh
@@ -117,17 +123,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-install nginx
-
-```sh
-sudo apt update
-sudo apt install nginx
-```
-
 adjusting the Firewall
 
 ```sh
 sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 3050
 sudo ufw enable
 ```
 
@@ -137,66 +137,39 @@ install git
 sudo apt install git
 ```
 
-install application & start application
+install application
 
 ```sh
 cd ~
 git clone git@github.com:annop584/rsp_assignment.git
-cd rsp_assignment
+```
+
+change api endpoint at frontend path "rsp_assignment/rsp_front/.env.production" to this server ip
+
+install nano text editor
+
+```sh
+sudo apt install nano
+```
+
+open .evn.pruduction file
+
+```sh
+cd ~/rsp_assignment
+nano ~/rsp_assignment/rsp_front/.env.production"
+```
+
+change api endpoint
+
+```sh
+NEXT_PUBLIC_ENDPOINT=http://your-ubuntu-server-ip:3050
+```
+
+start application
+
+```sh
+cd ~/rsp_assignment
 docker-compose -f docker-compose.yaml -f docker-compose.production.yaml  up -d
 ```
 
-set nginx reverse proxy
-
-```sh
-cd ~
-nano /etc/nginx/sites-available/default
-```
-
-rewrite in file "/etc/nginx/sites-available/default" to
-
-```sh
-upstream front {
-    server localhost:3050;
-}
-upstream api {
-    server localhost:3050/api;
-}
-server {
-        listen 80;
-        location / {
-            proxy_pass http://front;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "Upgrade";
-        }
-        location /socket.io {
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            proxy_http_version 1.1;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $host;
-            proxy_pass http://api/socket.io/;
-        }
-        location /api {
-            rewrite /api/(.*) /$1 break;
-            proxy_pass http://api;
-        }
-}
-```
-
-enable the file by creating a link from it to the sites-enabled directory
-
-```sh
-sudo ln -s /etc/nginx/sites-available/deafult /etc/nginx/sites-enabled/
-```
-
-restart nginx
-
-```sh
-sudo systemctl restart nginx
-```
-
-don't forget to change api endpoint at frontend path "rsp_assignment/rsp_front/.env.production"
-
-then try to test on browser by access url "http://your-ubuntu-server-ip"
+then try to test on browser by access url "http://your-ubuntu-server-ip:3050"
