@@ -154,7 +154,7 @@ install nano text editor
 sudo apt install nano
 ```
 
-open .evn.pruduction file
+open ".evn.production" file
 
 ```sh
 cd ~/rsp_assignment
